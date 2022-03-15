@@ -1,0 +1,42 @@
+@media (min-width: 900px) {
+    body{
+        width: 70%;
+        margin: auto;
+    }
+    header img{
+        width: 15%;
+    }
+    
+    h2{
+        font-size: 40px;
+    }
+
+    .fonctionnement .container .mode_emploi{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        div{
+            width: 300px;
+        }
+    }
+
+    .restaurants{
+        margin: auto;
+        .appercu_restaurants{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+        .vignette_restaurant{
+            width: 300px;
+        }
+    }
+
+    .menu{
+        width: 70%;
+        margin: auto;
+        .titre{
+        background: rgb(247, 247, 247);
+        }
+    }
+}

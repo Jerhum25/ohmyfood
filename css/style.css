@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /*GLOBAL RESET*/
 html, body, span, applet, object, iframe,
 blockquote, pre,
@@ -50,26 +49,6 @@ table {
   border-spacing: 0;
 }
 
-/* Début du code */
-.loading_spinner {
-  visibility: hidden;
-  border-top: 15px solid #9356DC;
-  border-bottom: 15px dotted #9356DC;
-  border-left: 15px solid #9356DC;
-  border-right: 15px solid #9356DC;
-  width: 80px;
-  height: 80px;
-  border-radius: 300px;
-  animation: spinner 1.6s linear 2 backwards;
-  position: absolute;
-  margin: auto;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 99;
-}
-
 @keyframes spinner {
   0% {
     visibility: visible;
@@ -95,6 +74,51 @@ table {
     visibility: hidden;
   }
 }
+@keyframes apparition {
+  from {
+    opacity: 0;
+    transform: translate(0, 10px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+@keyframes check_rotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+@keyframes check_slide {
+  from {
+    margin-right: 0px;
+  }
+  to {
+    margin-right: 50px;
+  }
+}
+.loading_spinner {
+  visibility: hidden;
+  border-top: 15px solid #9356DC;
+  border-bottom: 15px dotted #9356DC;
+  border-left: 15px solid #9356DC;
+  border-right: 15px solid #9356DC;
+  width: 80px;
+  height: 80px;
+  border-radius: 300px;
+  animation: spinner 1.6s linear 2 backwards;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 99;
+}
+
 .bloc_page {
   visibility: visible;
   font-family: roboto;
@@ -165,6 +189,9 @@ h2 {
   border: none;
   box-shadow: 5px 5px 5px lightgrey;
 }
+.description button:hover {
+  box-shadow: 5px 5px 5px #a0a0a0;
+}
 
 .fonctionnement .container {
   width: 88%;
@@ -188,6 +215,7 @@ h2 {
 }
 .fonctionnement .container .mode_emploi div:hover {
   background-color: #f3e9ff;
+  box-shadow: 5px 5px 5px #a0a0a0;
 }
 .fonctionnement .container .mode_emploi div:hover i {
   color: #9356DC;
@@ -224,6 +252,13 @@ h2 {
   background-color: #fff;
   box-shadow: 5px 5px 5px lightgrey;
 }
+.restaurants .vignette_restaurant:hover {
+  box-shadow: 5px 5px 5px #a0a0a0;
+}
+.restaurants .vignette_restaurant :hover + .new {
+  border: 1px solid #278870;
+  transform: scale(1.1);
+}
 .restaurants img {
   height: 70%;
   width: 100%;
@@ -241,7 +276,7 @@ h2 {
   color: #000;
   display: flex;
   flex-direction: column;
-  margin-top: 0px;
+  margin-top: 5px;
 }
 .restaurants h3 {
   margin: 0;
@@ -307,53 +342,6 @@ footer .container span {
   object-fit: cover;
 }
 
-/* .titre{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 20px;
-    border-radius: 20px;
-    i{
-        font-size: 25px;
-        color: #FFF;
-        text-shadow: #000 0 0 3px;
-        transition: 1s linear;
-        &:hover{   
-            cursor: pointer;
-            text-shadow: none;
-            background: -webkit-linear-gradient(45deg, $primaire, $secondaire);
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-    }
-}
- */
-@keyframes apparition {
-  from {
-    opacity: 0;
-    transform: translate(0, 10px);
-  }
-  to {
-    opacity: 1;
-    transform: translate(0, 0);
-  }
-}
-@keyframes check_rotate {
-  from {
-    transform: rotate(0);
-  }
-  to {
-    transform: rotate(-360deg);
-  }
-}
-@keyframes check_slide {
-  from {
-    margin-right: 0px;
-  }
-  to {
-    margin-right: 50px;
-  }
-}
 .menu {
   background: #f7f7f7;
   border-radius: 20px 20px 0 0;
@@ -376,11 +364,12 @@ footer .container span {
 }
 .menu .titre i {
   font-size: 25px;
-  color: #FFF;
+  color: #f7f7f7;
+  background: #f7f7f7;
   text-shadow: #000 0 0 3px;
   transition: 1s linear;
 }
-.menu .titre i:hover {
+.menu .titre i:active {
   cursor: pointer;
   text-shadow: none;
   background: -webkit-linear-gradient(45deg, #9356DC, #FF79DA);
@@ -412,15 +401,28 @@ footer .container span {
   position: relative;
   overflow: hidden;
   box-shadow: 5px 5px 5px lightgrey;
+  /*         &:active .check i{
+              animation: check_rotate 1s; 
+          }
+          &:active .check{
+              animation: check_slide 1s forwards;
+          }
+          &:active .prix{
+              animation: check_slide 1s forwards;
+          }
+   */
 }
-.menu .plat:hover .check i {
-  animation: check_rotate 1s;
+.menu .plat:active .check {
+  transform: translateX(-50px);
+  transition: 0.5s;
 }
-.menu .plat:hover .check {
-  animation: check_slide 1s both;
+.menu .plat:active .check i {
+  transform: rotate(-360deg);
+  transition: 0.5s;
 }
-.menu .plat:hover .prix {
-  animation: check_slide 1s both;
+.menu .plat:active .prix {
+  transform: translateX(-50px);
+  transition: 0.5s;
 }
 .menu .entrees {
   animation: apparition 1s backwards;
@@ -440,7 +442,9 @@ footer .container span {
 .menu .prix {
   display: flex;
   height: 100%;
+  font-weight: bold;
   align-items: flex-end;
+  transition: 0.5s;
 }
 .menu .check {
   background: #99E2D0;
@@ -453,11 +457,13 @@ footer .container span {
   align-items: center;
   justify-content: center;
   color: #99E2D0;
+  transition: 0.5s;
 }
 .menu i {
   background: #FFF;
   padding: 5px;
   border-radius: 15px;
+  transition: 0.5s;
 }
 
 .commander button {
@@ -466,11 +472,15 @@ footer .container span {
   font-size: 18px;
   font-weight: bold;
   padding: 15px 50px;
+  border: none;
   border-radius: 35px;
   color: #FFF;
   margin: 0 auto 30px;
   box-shadow: 5px 5px 5px lightgrey;
   background: linear-gradient(#FF79DA, #9356DC);
+}
+.commander button:hover {
+  box-shadow: 5px 5px 5px #a0a0a0;
 }
 
 @media (min-width: 900px) {
@@ -513,7 +523,7 @@ footer .container span {
     margin: auto;
   }
   .menu .titre {
-    background: #fff;
+    background: #f7f7f7;
   }
 }
 

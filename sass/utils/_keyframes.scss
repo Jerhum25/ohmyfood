@@ -1,0 +1,57 @@
+@keyframes spinner{
+    0%{
+    visibility: visible;
+      transform: rotate(0deg) scale(1);
+    }
+    50%{
+      transform: rotate(180deg) scale(1.2);
+      opacity: 1;
+      border-top: 15px solid $secondaire;
+      border-bottom: 15px dotted $secondaire;
+      border-left: 15px solid $secondaire;
+      border-right: 15px solid $secondaire;
+    }
+     100%{
+      transform: rotate(360deg) scale(1);
+    }
+  }
+
+
+@keyframes accueil{
+    from{
+        visibility: hidden;
+    }
+    to{
+        visibility: hidden;
+    }
+}
+
+
+@keyframes apparition {
+    from{
+        opacity: 0;
+        transform: translate(0, 10px);
+    }
+    to{
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}
+
+
+@keyframes check_rotate{
+    from{
+        transform: rotate(0);
+    }
+    to{
+        transform: rotate(-360deg);
+    }
+}
+@keyframes check_slide {
+    from{
+        margin-right: 0px;
+    }
+    to{
+        margin-right: 50px;
+    }
+}

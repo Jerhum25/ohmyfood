@@ -1,0 +1,18 @@
+.loading_spinner{
+    visibility: hidden;
+    border-top: 15px solid $primaire;
+    border-bottom: 15px dotted $primaire;
+    border-left: 15px solid $primaire;
+    border-right: 15px solid $primaire;
+    width: 80px;
+    height: 80px;
+    border-radius: 300px;
+    animation: spinner 1.6s linear 2 backwards;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 99;
+}
