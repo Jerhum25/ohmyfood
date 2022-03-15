@@ -1,4 +1,32 @@
-@media (min-width: 900px) {
+@media (min-width: 768px){
+    .fonctionnement{
+        .mode_emploi{
+            width: 60%;
+            margin: auto;
+        }
+    }
+    .restaurants{
+        .appercu_restaurants{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            .vignette_restaurant{
+                width: 48%;
+            }
+        }
+    }
+
+    .menu{
+        padding: 0 15%;
+    }
+}
+
+
+
+
+
+
+@media (min-width: 992px) {
     body{
         width: 70%;
         margin: auto;
@@ -15,6 +43,7 @@
         display: flex;
         flex-direction: row;
         justify-content: space-around;
+        width: auto;
         div{
             width: 300px;
         }
@@ -23,17 +52,16 @@
     .restaurants{
         margin: auto;
         .appercu_restaurants{
-            display: flex;
-            flex-direction: row;
+            flex-wrap: nowrap;
             justify-content: space-around;
-        }
-        .vignette_restaurant{
-            width: 300px;
-        }
+            .vignette_restaurant{
+                width: 23%;
+            }
+       }
     }
 
     .menu{
-        width: 70%;
+        width: 60%;
         margin: auto;
         .titre{
         background: rgb(247, 247, 247);

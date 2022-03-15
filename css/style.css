@@ -194,14 +194,16 @@ h2 {
 }
 
 .fonctionnement .container {
-  width: 88%;
-  margin: auto;
   background-color: #FFF;
   margin-bottom: 40px;
+}
+.fonctionnement .container h2 {
+  padding-left: 10px;
 }
 .fonctionnement .container .mode_emploi {
   display: flex;
   flex-direction: column;
+  padding: 0 20px;
 }
 .fonctionnement .container .mode_emploi div {
   cursor: pointer;
@@ -483,7 +485,26 @@ footer .container span {
   box-shadow: 5px 5px 5px #a0a0a0;
 }
 
-@media (min-width: 900px) {
+@media (min-width: 768px) {
+  .fonctionnement .mode_emploi {
+    width: 60%;
+    margin: auto;
+  }
+
+  .restaurants .appercu_restaurants {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .restaurants .appercu_restaurants .vignette_restaurant {
+    width: 48%;
+  }
+
+  .menu {
+    padding: 0 15%;
+  }
+}
+@media (min-width: 992px) {
   body {
     width: 70%;
     margin: auto;
@@ -501,6 +522,7 @@ footer .container span {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    width: auto;
   }
   .fonctionnement .container .mode_emploi div {
     width: 300px;
@@ -510,16 +532,15 @@ footer .container span {
     margin: auto;
   }
   .restaurants .appercu_restaurants {
-    display: flex;
-    flex-direction: row;
+    flex-wrap: nowrap;
     justify-content: space-around;
   }
-  .restaurants .vignette_restaurant {
-    width: 300px;
+  .restaurants .appercu_restaurants .vignette_restaurant {
+    width: 23%;
   }
 
   .menu {
-    width: 70%;
+    width: 60%;
     margin: auto;
   }
   .menu .titre {

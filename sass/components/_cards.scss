@@ -75,13 +75,15 @@ h2{
 
 
 .fonctionnement .container{
-    width: 88%;
-    margin: auto; 
     background-color: #FFF; 
     margin-bottom: 40px;
+    h2{
+        padding-left: 10px;
+    }
     .mode_emploi{
         display: flex;
         flex-direction: column; 
+        padding: 0 20px;
         div{
             cursor: pointer;
             display: flex;
@@ -135,7 +137,7 @@ h2{
         &:hover{
             box-shadow: 5px 5px 5px rgb(160, 160, 160);
         }
-        :hover + .new{
+        :hover +.new{
             border: 1px solid darken($color: $tertiaire, $amount: 40);
             transform: scale(1.1);
         }
