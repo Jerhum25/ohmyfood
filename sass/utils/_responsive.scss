@@ -1,10 +1,12 @@
 @media (min-width: 768px){
+/* section fonctionnement */
     .fonctionnement{
         .mode_emploi{
             width: 60%;
             margin: auto;
         }
     }
+/* section restaurants */
     .restaurants{
         .appercu_restaurants{
             display: flex;
@@ -15,15 +17,11 @@
             }
         }
     }
-
+/* section menu */
     .menu{
         padding: 0 15%;
     }
 }
-
-
-
-
 
 
 @media (min-width: 992px) {
@@ -31,14 +29,15 @@
         width: 70%;
         margin: auto;
     }
-    header img{
-        width: 15%;
-    }
-    
     h2{
         font-size: 40px;
     }
 
+/* header */
+    header img{
+        width: 15%;
+    }
+/* section fonctionnement */
     .fonctionnement .container .mode_emploi{
         display: flex;
         flex-direction: row;
@@ -48,7 +47,7 @@
             width: 300px;
         }
     }
-
+/* section restaurants */
     .restaurants{
         margin: auto;
         .appercu_restaurants{
@@ -59,7 +58,7 @@
             }
        }
     }
-
+/* section menu */
     .menu{
         width: 60%;
         margin: auto;

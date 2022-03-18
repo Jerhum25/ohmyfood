@@ -84,22 +84,6 @@ table {
     transform: translate(0, 0);
   }
 }
-@keyframes check_rotate {
-  from {
-    transform: rotate(0);
-  }
-  to {
-    transform: rotate(-360deg);
-  }
-}
-@keyframes check_slide {
-  from {
-    margin-right: 0px;
-  }
-  to {
-    margin-right: 50px;
-  }
-}
 .loading_spinner {
   visibility: hidden;
   border-top: 15px solid #9356DC;
@@ -126,10 +110,26 @@ table {
   animation: accueil 3.2s backwards;
 }
 
+h1 {
+  font-family: Shrikhand;
+  font-size: 30px;
+  font-weight: 300;
+}
+
+h2 {
+  font-size: 30px;
+  margin-top: 50px;
+}
+
+h3 {
+  font-size: 1.2rem;
+}
+
+/* section header */
 header .container {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   position: relative;
 }
 header .container i {
@@ -145,22 +145,12 @@ header .container img {
   margin: 10px 0;
 }
 
-h1 {
-  font-family: Shrikhand;
-  font-size: 30px;
-  font-weight: 300;
-}
-
-h2 {
-  font-size: 30px;
-  margin-top: 50px;
-}
-
+/* section localisation */
 .localisation .container {
   display: flex;
   justify-content: center;
-  background-color: lightgrey;
   align-items: center;
+  background-color: lightgrey;
   padding: 15px;
 }
 .localisation .container i {
@@ -174,6 +164,7 @@ h2 {
   outline: none;
 }
 
+/* section description */
 .description {
   text-align: center;
   background-color: #f3f3f3;
@@ -193,6 +184,7 @@ h2 {
   box-shadow: 5px 5px 5px #a0a0a0;
 }
 
+/* section fonctionnement */
 .fonctionnement .container {
   background-color: #FFF;
   margin-bottom: 40px;
@@ -206,13 +198,14 @@ h2 {
   padding: 0 20px;
 }
 .fonctionnement .container .mode_emploi div {
-  cursor: pointer;
   display: flex;
+  align-items: center;
+  cursor: pointer;
   background-color: #f3f3f3;
   margin-bottom: 20px;
+  padding-right: 20px;
   border-radius: 20px;
   box-shadow: 5px 5px 5px lightgrey;
-  align-items: center;
   animation: apparition 1s 3.2s backwards;
 }
 .fonctionnement .container .mode_emploi div:hover {
@@ -223,8 +216,10 @@ h2 {
   color: #9356DC;
 }
 .fonctionnement .container .mode_emploi i {
-  margin-left: 20px;
-  margin-right: 20px;
+  width: 30px;
+  text-align: center;
+  margin-left: 10px;
+  margin-right: 10px;
   color: grey;
   font-size: 25px;
 }
@@ -234,9 +229,10 @@ h2 {
   padding: 2px 6px;
   border-radius: 35px;
   position: relative;
-  left: -10px;
+  left: -13px;
 }
 
+/* section restaurants */
 .restaurants {
   padding: 0 10px 40px 10px;
   background: #f3f3f3;
@@ -253,13 +249,13 @@ h2 {
   position: relative;
   background-color: #fff;
   box-shadow: 5px 5px 5px lightgrey;
+  transition: all ease-in 0.1s;
 }
 .restaurants .vignette_restaurant:hover {
   box-shadow: 5px 5px 5px #a0a0a0;
-}
-.restaurants .vignette_restaurant :hover + .new {
-  border: 1px solid #278870;
-  transform: scale(1.1);
+  -ms-transform: scale(1.05);
+  -webkit-transform: scale(1.05);
+  transform: scale(1.05);
 }
 .restaurants img {
   height: 70%;
@@ -284,7 +280,8 @@ h2 {
   margin: 0;
 }
 .restaurants p {
-  margin: 0;
+  margin-top: 5px;
+  font-size: 15px;
 }
 .restaurants .new {
   display: inline-block;
@@ -305,10 +302,11 @@ h2 {
 .restaurants i:hover {
   text-shadow: none;
   background: -webkit-linear-gradient(45deg, #9356DC, #FF79DA);
-  background-clip: text;
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
+/* footer */
 footer .container {
   border: 1px;
   background-color: #5c5b5b;
@@ -334,6 +332,7 @@ footer .container span {
   background-color: #f7f7f7;
 }
 
+/* section photo */
 .photo {
   height: 300px;
   width: 100%;
@@ -344,6 +343,7 @@ footer .container span {
   object-fit: cover;
 }
 
+/* section menu */
 .menu {
   background: #f7f7f7;
   border-radius: 20px 20px 0 0;
@@ -375,7 +375,7 @@ footer .container span {
   cursor: pointer;
   text-shadow: none;
   background: -webkit-linear-gradient(45deg, #9356DC, #FF79DA);
-  background-clip: text;
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 .menu .underline_menu {
@@ -403,16 +403,6 @@ footer .container span {
   position: relative;
   overflow: hidden;
   box-shadow: 5px 5px 5px lightgrey;
-  /*         &:active .check i{
-              animation: check_rotate 1s; 
-          }
-          &:active .check{
-              animation: check_slide 1s forwards;
-          }
-          &:active .prix{
-              animation: check_slide 1s forwards;
-          }
-   */
 }
 .menu .plat:active .check {
   transform: translateX(-50px);
@@ -486,11 +476,13 @@ footer .container span {
 }
 
 @media (min-width: 768px) {
+  /* section fonctionnement */
   .fonctionnement .mode_emploi {
     width: 60%;
     margin: auto;
   }
 
+  /* section restaurants */
   .restaurants .appercu_restaurants {
     display: flex;
     flex-direction: row;
@@ -500,6 +492,7 @@ footer .container span {
     width: 48%;
   }
 
+  /* section menu */
   .menu {
     padding: 0 15%;
   }
@@ -510,14 +503,16 @@ footer .container span {
     margin: auto;
   }
 
-  header img {
-    width: 15%;
-  }
-
   h2 {
     font-size: 40px;
   }
 
+  /* header */
+  header img {
+    width: 15%;
+  }
+
+  /* section fonctionnement */
   .fonctionnement .container .mode_emploi {
     display: flex;
     flex-direction: row;
@@ -528,6 +523,7 @@ footer .container span {
     width: 300px;
   }
 
+  /* section restaurants */
   .restaurants {
     margin: auto;
   }
@@ -539,6 +535,7 @@ footer .container span {
     width: 23%;
   }
 
+  /* section menu */
   .menu {
     width: 60%;
     margin: auto;

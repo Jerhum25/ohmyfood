@@ -1,3 +1,9 @@
 @mixin degrade_bouton{
     background: linear-gradient($secondaire, $primaire);
 }
+
+@mixin flex_center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
