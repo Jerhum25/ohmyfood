@@ -13,6 +13,7 @@
         @include degrade_bouton();
         &:hover{
             box-shadow: 5px 5px 5px rgb(160, 160, 160);
+            opacity: .8;
         }
     }
 }

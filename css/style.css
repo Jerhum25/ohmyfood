@@ -182,6 +182,7 @@ header .container img {
 }
 .description button:hover {
   box-shadow: 5px 5px 5px #a0a0a0;
+  opacity: 0.8;
 }
 
 /* section fonctionnement */
@@ -209,7 +210,7 @@ header .container img {
   animation: apparition 1s 3.2s backwards;
 }
 .fonctionnement .container .mode_emploi div:hover {
-  background-color: #f3e9ff;
+  background-color: #efe6fa;
   box-shadow: 5px 5px 5px #a0a0a0;
 }
 .fonctionnement .container .mode_emploi div:hover i {
@@ -473,6 +474,7 @@ footer .container span {
 }
 .commander button:hover {
   box-shadow: 5px 5px 5px #a0a0a0;
+  opacity: 0.8;
 }
 
 @media (min-width: 768px) {

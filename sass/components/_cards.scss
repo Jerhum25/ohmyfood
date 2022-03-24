@@ -70,7 +70,8 @@ header .container{
         border: none;
         box-shadow: 5px 5px 5px lightgrey;
         &:hover{
-            box-shadow: 5px 5px 5px rgb(160, 160, 160);
+            @include box_shadow();
+            opacity: .8;
         }
     }
 }
@@ -97,8 +98,8 @@ header .container{
             box-shadow: 5px 5px 5px lightgrey;
             animation: apparition 1s 3.2s backwards;
                 &:hover{
-                    background-color: #f3e9ff;
-                    box-shadow: 5px 5px 5px rgb(160, 160, 160);
+                    background-color: lighten($color: $primaire, $amount: 34);
+                    @include box_shadow();
                     i{
                         color: $primaire;
                     }
@@ -141,7 +142,7 @@ header .container{
         box-shadow: 5px 5px 5px lightgrey;
         transition: all ease-in .1s;
         &:hover{
-            box-shadow: 5px 5px 5px rgb(160, 160, 160);
+            @include box_shadow();
             -ms-transform: scale(1.05);
             -webkit-transform: scale(1.05);
             transform: scale(1.05);
@@ -198,7 +199,8 @@ header .container{
 }
 
 /* footer */
-footer .container{border: 1px;
+footer .container{
+    border: 1px;
     background-color: rgb(92, 91, 91);
     color: #FFF;
     padding: 30px 15px;
