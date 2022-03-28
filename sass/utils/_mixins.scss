@@ -11,3 +11,10 @@
 @mixin box_shadow{
     box-shadow: 5px 5px 5px rgb(160, 160, 160);
 }
+
+@mixin light($color){
+    @if(lightness($color) < 25%){
+        $color: lighten($color, 10%);
+    }@else{
+        $color: darken($color, 10%);
+    }}

@@ -36,6 +36,7 @@ header .container{
         width: auto;
         margin: 10px 0;
     }
+    background-color: inverse(#ddd, 10%)
 }
 
 /* section localisation */
@@ -177,7 +178,7 @@ header .container{
     .new{
         display: inline-block;
         background-color: $tertiaire;
-        color: darken($color: $tertiaire, $amount: 40);
+        color: lightness-shift($tertiaire);
         padding: 7px 15px;
         border-radius: 3px;
         position: absolute;
