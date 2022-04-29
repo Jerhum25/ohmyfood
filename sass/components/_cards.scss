@@ -1,6 +1,6 @@
-.bloc_page{
+.bloc_page, .bloc_page_restaurant{
     visibility: visible;
-    font-family: roboto;    
+    font-family: "Roboto";    
     font-size: 20px;
     animation: accueil 3.2s backwards;
 }
@@ -36,7 +36,6 @@ header .container{
         width: auto;
         margin: 10px 0;
     }
-    background-color: inverse(#ddd, 10%)
 }
 
 /* section localisation */
@@ -149,18 +148,24 @@ header .container{
             transform: scale(1.05);
         }
     }
-    img{
+    .imgBox{
         height: 70%;
         width: 100%;
-        object-fit: cover;
-        margin-bottom: 0px;
+        img{
+            position: absolute;
+            bottom: 25%;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    
     }
     .nom_restaurant{
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        padding: 0 15px;
+        padding: 10px 15px;
     }
     div{
         color: #000;
@@ -182,8 +187,8 @@ header .container{
         padding: 7px 15px;
         border-radius: 3px;
         position: absolute;
-        top: 15px;
-        right: 15px;
+        top: 10px;
+        right: 10px;
     }
     i{
         font-size: 22px;
@@ -250,6 +255,8 @@ footer .container{
         font-size: 17px;
         margin-left: 10px;
         margin-bottom: 5px;
+        font-weight: 100;
+        color: #666;
     }
     .titre{
         display: flex;
@@ -281,11 +288,14 @@ footer .container{
     strong{
         font-size: 17px;
         font-weight: bold;
+        color: #000;
     }
     p{
         font-size: 14px;
         margin-top: 0;
         margin-bottom: 0;
+        line-height: 20px;
+        color: #666;
     }
     .plat{
         background-color: #FFF;
@@ -333,6 +343,10 @@ footer .container{
         font-weight: bold;
         align-items: flex-end;
         transition: 0.5s;
+        margin-right: 10px;
+        background: #fff;
+        padding-left: 10px;
+        color: #000;
     }
     .check{
         background: $tertiaire;
@@ -353,5 +367,4 @@ footer .container{
         border-radius: 15px;
         transition: 0.5s;
     }
-
 }
